@@ -14,6 +14,12 @@ module.exports = {
         rules: [{
             test: /\.vue$/,
             loader: 'vue-loader',
+        }, {
+            test: /\.css$/,
+            use: [
+                'vue-style-loader',
+                'css-loader'
+            ]
         }],
     },
     plugins: [
@@ -22,5 +28,6 @@ module.exports = {
     output: {
         filename: '[name].js',
         path: path.join(__dirname, 'dist'),
+        publicPath: '/dist'
     },
 };
